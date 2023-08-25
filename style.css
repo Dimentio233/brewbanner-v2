@@ -1,0 +1,376 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* * {
+  outline:1px solid red!important
+}  */
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  min-height: 8vh;
+  /* background-color: rgba(26, 97, 141, 0.3); */
+  z-index: 1;
+  /* background-color: #5d4954; */
+  /* background-size: cover; */
+  /* font-family: 'Poppins', sans-serif; */
+}
+
+.logo {
+  color: rgb(226, 226, 226);
+  /* font-weight: bold; */
+  /* text-transform: uppercase; */
+  /* letter-spacing: 5px; */
+  font-size: 24px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  /* z-index: 100000; */
+  /* background-color: red; */
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  color: rgb(226, 226, 226);
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: rgb(226, 226, 226);
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+body {
+  background: #15181A;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+.skw-pages {
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+}
+
+.skw-page {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+/* .skw-page__half {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100vh;
+  transition: transform 1s;
+} */
+/* I think the following code starts the vertical thing: */
+.skw-page__half {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100vh;
+  transition: transform 1s;
+}
+
+.skw-page__half--left {
+  left: 0;
+  transform: translate3d(-32.4vh, 100%, 0);
+}
+/* .skw-page__half--left {
+  top: 0;
+  transform: translate3d(-32.4vh, 100%, 0);
+} */
+.skw-page__half--right {
+  left: 50%;
+  transform: translate3d(32.4vh, -100%, 0);
+}
+/* .skw-page__half--right {
+  top: 50%;
+  transform: translate3d(32.4vh, 100%, 0);
+} */
+.skw-page.active .skw-page__half {
+  transform: translate3d(0, 0, 0);
+}
+.skw-page__skewed {
+  /* overflow: hidden; */
+  position: absolute;
+  top: 0;
+  width: 140%;
+  height: 100%;
+  /* 18 degree is the default */
+  transform: skewX(-18deg); 
+  background: #000;
+}
+.skw-page__half--left .skw-page__skewed {
+  left: -40%;
+}
+.skw-page__half--right .skw-page__skewed {
+  right: -40%;
+}
+.skw-page__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 30%;
+  color: #fff;
+  transform: skewX(18deg);
+  transition: transform 1s, opacity 1s;
+  background-size: cover;
+}
+.skw-page__half--left .skw-page__content {
+  padding-left: 40%;
+  padding-right: 40%;
+  transform-origin: 100% 0;
+}
+.skw-page__half--right .skw-page__content {
+  padding-left: 30%;
+  padding-right: 30%;
+  transform-origin: 0 100%;
+}
+.skw-page.inactive .skw-page__content {
+  opacity: 0.5;
+  transform: skewX(18deg) scale(0.95);
+}
+.skw-page__heading {
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-size: 25px;
+  text-align: center;
+}
+.skw-page__description {
+  font-size: 18px;
+  text-align: center;
+}
+.skw-page__link {
+  color: #FFA0A0;
+}
+.skw-page-1 .skw-page__half--left .skw-page__content {
+  /* height: 100vh; */
+  background-image: url("https://s11.gifyu.com/images/SgLFg.gif");
+}
+.skw-page-1 .skw-page__half--right .skw-page__content {
+  background: #292929;
+}
+.skw-page-2 .skw-page__half--left .skw-page__content {
+  background: #292929;
+}
+.skw-page-2 .skw-page__half--right .skw-page__content {
+  background-image: url("https://i.ibb.co/P1KSRTg/brewbanner-13.jpg");
+}
+.skw-page-3 .skw-page__half--left .skw-page__content {
+  background-image: url("https://i.ibb.co/hLBkMs8/brewbanner-16.jpg");
+}
+.skw-page-3 .skw-page__half--right .skw-page__content {
+  background: #292929;
+}
+.skw-page-4 .skw-page__half--left .skw-page__content {
+  background: #292929;
+}
+.skw-page-4 .skw-page__half--right .skw-page__content {
+  background-image: url("https://i.ibb.co/cDVk7mn/brewbanner-3.png");
+}
+.skw-page-5 .skw-page__half--left .skw-page__content {
+  background-image: url("https://i.ibb.co/zm2s7w2/brewbanner-17.jpg");
+}
+.skw-page-5 .skw-page__half--right .skw-page__content {
+  background: #292929;
+}
+.skw-page-6 .skw-page__half--left .skw-page__content {
+  background: #292929;
+}
+.skw-page-6 .skw-page__half--right .skw-page__content {
+  background-image: url("https://i.ibb.co/q5ctDb6/maranda-vandergriff-7aak-Zd-Il4vg-unsplash.jpg");
+}/*# sourceMappingURL=style.css.map */
+
+/* #splitPhone {
+  display: none;
+} */
+
+
+@media screen and (max-width: 1024px) {
+  .skw-page__half--left .skw-page__skewed {
+    left: -30%;
+    padding-left: 10%;
+  }
+  .skw-page__half--right .skw-page__skewed {
+    right: -30%;
+  }
+  .nav-links {
+    width: 60%;
+  }
+
+  .skw-page__skewed {
+    transform: skewX(0deg);
+  }
+
+  .skw-page__content {
+    transform: skewX(0deg);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+    /* background-color: pink; */
+  }
+
+    .skw-page__half {
+    position: static;
+    width: 100%;
+    height: 50vh;
+    background-color: blue;
+    transition: transform 1s;
+  }
+
+  .skw-page__half--left {
+    top: 0;
+    left: 0;
+    /* transform: translate3d(0, 0, 0); */
+    /* transform: translate3d(-32.4vh, 100%, 0); */
+    transform: translate3d(150%, 120%, 0);
+  }
+
+  .skw-page__half--right {
+    top: 50%;
+    left: 0;
+    /* transform: translate3d(0, 0, 0); */
+    /* transform: translate3d(32.4vh, -100%, 0); */
+    transform: translate3d(120%, 120%, 0);
+  }
+
+  .skw-page-1 .skw-page__half--left {
+    position: relative;
+    left: 60px;
+  }
+
+  .skw-page-1 .skw-page__half--right {
+    position: relative;
+    left: -40px;
+    width: 110%
+  }
+
+  .skw-page-2 .skw-page__half--left {
+    position: relative;
+    left: -38px;
+  }
+
+  .skw-page-2 .skw-page__half--left .skw-page__heading {
+    margin-right: 20px;
+  }
+
+  .skw-page-3 .skw-page__half--right {
+    position: relative;
+    left: -30px;
+  }
+
+  .skw-page-4 .skw-page__half--left {
+    position: relative;
+    left: -25px;
+  }
+
+  .skw-page-4 .skw-page__half--left .skw-page__heading {
+    margin-right: 20px;
+  }
+
+  .skw-page-5 .skw-page__half--right {
+    /* position: relative; */
+    font-size: 0.9em;
+    margin-left: -160px;
+    width: 150%;
+    /* left: -150px; */
+  }
+
+  .skw-page-6 .skw-page__half--left {
+    position: relative;
+    left: -25px;
+  }
+
+  .skw-page-6 .skw-page__half--left .skw-page__heading {
+    margin-top: 30px;
+  }
+
+
+  .nav-links {
+    /* z-index: -1; */
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 8vh;
+    /* background-color: #343d54; */
+    background-color: #15181A;
+    /* background-color: #292929; */
+    /* color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+  .nav-links li {
+    opacity: 0;
+  }
+  .nav-links li a {
+    color: white
+  }
+  .burger {
+    display: block;
+  }
+}
+
+.nav-active {
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
