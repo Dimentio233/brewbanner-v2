@@ -19,6 +19,13 @@ const navSlide = () => {
         burger.classList.toggle('toggle')
     
     })
+
+    navLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('nav-active');  // remove the nav-active class
+            burger.classList.remove('toggle');  // revert burger to its original state
+        });
+    });
 }
 
 navSlide();
